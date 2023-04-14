@@ -11,6 +11,13 @@ public class Cars {
         this.yearOfRealease = yearOfRealease;
     }
 
+    @Override
+    public String toString() {
+        return "model='" + model + '\'' +
+                ", manufacturing Country='" + manufacturingСountry + '\'' +
+                ", year Of Release=" + yearOfRealease;
+    }
+
     public String getModel() {
         return model;
     }

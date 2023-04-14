@@ -1,26 +1,30 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Loop</title>
-  <style>
-    table th, table td {padding: 5px;}
-  </style>
+  <title>Car</title>
+  <style>table th, table td {padding: 10px;}</style>
 </head>
+
 <body>
-<h1>Table</h1>
-<table border="1">
+<h1>Table of CARS</h1>
+
+<table>
   <tr>
     <th>Model</th>
     <th>Country</th>
     <th>Year</th>
   </tr>
-  <tr th:each="cars : ${listOfCars}"
-      class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
-    <td th:utext="${cars.getModel()}">Model</td>
-    <td th:utext="${cars.getManufacturingСountry()}">Country</td>
-    <td th:utext="${cars.getYearOfRealease()}">Year</td>
+
+  <tr th:each="car : ${listOfCars}">
+    <td th:text="${car.model}">Model</td>
+    <td th:text="${car.manufacturingСountry}">Manufacturing Country</td>
+    <td th:text="${car.yearOfRealease}">Year Of Release</td>
   </tr>
+
 </table>
+
 </body>
+
 </html>

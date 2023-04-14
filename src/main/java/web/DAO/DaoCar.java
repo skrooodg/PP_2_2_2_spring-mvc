@@ -11,10 +11,10 @@ import java.util.stream.Collectors;
 
 @Component
 public class DaoCar {
-    private List<Cars> listOfCars;
+    private List<Cars> listOfCars = new ArrayList<>();
 
     {
-        listOfCars = new ArrayList<>();
+
         listOfCars.add(new Cars("BMW", "Germany", 2020l));
         listOfCars.add(new Cars("Mercedes", "Germany", 2000l));
         listOfCars.add(new Cars("Skoda", "Czech", 2019l));
@@ -22,11 +22,11 @@ public class DaoCar {
         listOfCars.add(new Cars("Audi", "Germany", 1999l));
 
     }
-
+    public List<Cars> getList() {
+        return listOfCars;
+    }
     public  List<Cars> getListOfCars (int count) {
-        if(count == 0 || count > 5) {
-            return listOfCars;
-        }
+        if (count == 0 || count > 5) {return listOfCars;}
         return listOfCars.stream().limit(count).collect(Collectors.toList());
     }
 }
