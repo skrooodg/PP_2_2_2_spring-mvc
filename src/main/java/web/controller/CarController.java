@@ -25,7 +25,7 @@ public class CarController {
     }
 
     @GetMapping("/cars")
-    public String showCarsFromList(@RequestParam("count") int count, ModelMap model) {
+    public String showCarsFromList(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
         model.addAttribute("listOfCars", daoCar.getListOfCars(count));
         return "cars";
     }

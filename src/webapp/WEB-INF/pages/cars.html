@@ -4,27 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <title>Car</title>
-  <style>table th, table td {padding: 10px;}</style>
 </head>
 
 <body>
-<h1>Table of CARS</h1>
+<h1>List of CARS</h1>
 
-<table>
-  <tr>
-    <th>Model</th>
-    <th>Country</th>
-    <th>Year</th>
-  </tr>
-
-  <tr th:each="car : ${listOfCars}">
-    <td th:text="${car.model}">Model</td>
-    <td th:text="${car.manufacturingСountry}">Manufacturing Country</td>
-    <td th:text="${car.yearOfRealease}">Year Of Release</td>
-  </tr>
-
-</table>
+  <div><th:block th:each="car : ${listOfCars}">
+    <h1 th:text="${car}"></h1>
+  </th:block></div>
 
 </body>
-
 </html>
+
+
+
